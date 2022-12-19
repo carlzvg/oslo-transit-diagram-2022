@@ -1,0 +1,315 @@
+{
+    "station": [
+        {
+            "id": 1,
+            "zone": 3,
+            "norwegian": "Spikkestad"
+        },
+        {
+            "id": 2,
+            "zone": 3,
+            "norwegian": "Røyken"
+        },
+        {
+            "id": 3,
+            "zone": 2,
+            "norwegian": "Heggedal"
+        },
+        {
+            "id": 4,
+            "zone": 2,
+            "norwegian": "Gullhella"
+        },
+        {
+            "id": 5,
+            "zone": 2,
+            "norwegian": "Bondivann"
+        },
+        {
+            "id": 6,
+            "zone": 2,
+            "norwegian": "Asker"
+        },
+        {
+            "id": 7,
+            "zone": 2,
+            "norwegian": "Høn"
+        },
+        {
+            "id": 8,
+            "zone": 2,
+            "norwegian": "Vakås"
+        },
+        {
+            "id": 9,
+            "zone": 2,
+            "norwegian": "Hvalstad"
+        },
+        {
+            "id": 10,
+            "zone": 2,
+            "norwegian": "Billingstad"
+        },
+        {
+            "id": 11,
+            "zone": 2,
+            "norwegian": "Slependen"
+        },
+        {
+            "id": 12,
+            "zone": 2,
+            "norwegian": "Sandvika"
+        },
+        {
+            "id": 13,
+            "zone": 2,
+            "norwegian": "Blommenholm"
+        },
+        {
+            "id": 14,
+            "zone": 2,
+            "norwegian": "Høvik"
+        },
+        {
+            "id": 15,
+            "zone": 1,
+            "norwegian": "Stabekk",
+            "extra": {
+                "norwegian": "FLY1 stopper ikke på Stabekk",
+                "english": "FLY1 does not stop at Stabekk"
+            }
+        },
+        {
+            "id": 16,
+            "zone": 1,
+            "norwegian": "Lysaker"
+        },
+        {
+            "id": 17,
+            "zone": 1,
+            "norwegian": "Skøyen"
+        },
+        {
+            "id": 18,
+            "zone": 1,
+            "norwegian": "Nationaltheatret"
+        },
+        {
+            "id": 19,
+            "zone": 1,
+            "norwegian": "Stortinget"
+        },
+        {
+            "id": 20,
+            "zone": 1,
+            "norwegian": "Oslo S Jernbanetorget"
+        },
+        {
+            "id": 21,
+            "zone": 1,
+            "norwegian": "Bryn"
+        },
+        {
+            "id": 22,
+            "zone": 1,
+            "norwegian": "Alna"
+        },
+        {
+            "id": 23,
+            "zone": 1,
+            "norwegian": "Nyland"
+        },
+        {
+            "id": 24,
+            "zone": 1,
+            "norwegian": "Grorud"
+        },
+        {
+            "id": 25,
+            "zone": 1,
+            "norwegian": "Haugenstua"
+        },
+        {
+            "id": 26,
+            "zone": 1,
+            "norwegian": "Høybråten"
+        },
+        {
+            "id": 27,
+            "zone": 1,
+            "norwegian": "Lørenskog"
+        },
+        {
+            "id": 28,
+            "zone": 4,
+            "norwegian": "Hanaborg"
+        },
+        {
+            "id": 29,
+            "zone": 4,
+            "norwegian": "Fjellhamar"
+        },
+        {
+            "id": 30,
+            "zone": 4,
+            "norwegian": "Strømmen"
+        },
+        {
+            "id": 31,
+            "zone": 4,
+            "norwegian": "Sagdalen"
+        },
+        {
+            "id": 32,
+            "zone": 4,
+            "norwegian": "Lillestrøm",
+            "extra": {
+                "norwegian": "FLY2 stopper ikke på Lillestrøm",
+                "english": "FLY2 does not stop at Lillestrøm"
+            }
+        },
+        {
+            "id": 33,
+            "zone": 1,
+            "norwegian": "Nordstrand"
+        },
+        {
+            "id": 34,
+            "zone": 1,
+            "norwegian": "Ljan"
+        },
+        {
+            "id": 35,
+            "zone": 1,
+            "norwegian": "Hauketo"
+        },
+        {
+            "id": 36,
+            "zone": 1,
+            "norwegian": "Holmlia"
+        },
+        {
+            "id": 37,
+            "zone": 1,
+            "norwegian": "Rosenholm"
+        },
+        {
+            "id": 38,
+            "zone": 5,
+            "norwegian": "Kolbotn"
+        },
+        {
+            "id": 39,
+            "zone": 5,
+            "norwegian": "Solbråtan"
+        },
+        {
+            "id": 40,
+            "zone": 5,
+            "norwegian": "Myrvoll"
+        },
+        {
+            "id": 41,
+            "zone": 5,
+            "norwegian": "Greverud"
+        },
+        {
+            "id": 42,
+            "zone": 5,
+            "norwegian": "Oppegård"
+        },
+        {
+            "id": 43,
+            "zone": 5,
+            "norwegian": "Vevelstad",
+            "extra": {
+                "norwegian": "Begrenset driftstid",
+                "english": "Limited service"
+            }
+        },
+        {
+            "id": 44,
+            "zone": 5,
+            "norwegian": "Langhus"
+        },
+        {
+            "id": 45,
+            "zone": 5,
+            "norwegian": "Ski",
+            "extra": {
+                "norwegian": "Ingen avstigning i retning Halden",
+                "english": "No disembarking in direction Halden"
+            }
+        }
+    ],
+    "type": [
+        {
+            "id": 1,
+            "norwegian": "Tog",
+            "english": "Trains"
+        },
+        {
+            "id": 2,
+            "norwegian": "Trikk",
+            "english": "Tram"
+        },
+        {
+            "id": 3,
+            "norwegian": "T-Bane",
+            "english": "Metro"
+        }
+    ],
+    "line": [
+        {
+            "id": 1,
+            "code": "L1",
+            "route": [
+                [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32],
+                [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32]
+            ]
+        },
+        {
+            "id": 2,
+            "code": "L2",
+            "route": [
+                [15, 16, 17, 18, 19, 20]
+            ]
+        },
+        {
+            "id": 22,
+            "code": "L22"
+        }
+    ],
+    "zone": [
+        {
+            "code": 1,
+            "norwegian": "Sone 1",
+            "english": "Zone 1"
+        },
+        {
+            "id": 2,
+            "norwegian": "Sone 2V",
+            "english": "Zone 2V"
+        },
+        {
+            "id": 3,
+            "norwegian": "Sone 3V",
+            "english": "Zone 3V"
+        },
+        {
+            "id": 4,
+            "norwegian": "Sone 2Ø",
+            "english": "Zone 2Ø"
+        },
+        {
+            "id": 4,
+            "norwegian": "Sone 2s",
+            "english": "Zone 2s"
+        },
+        {
+            "id": 6,
+            "norwegian": "Andre billetter gjelder",
+            "english": "Andre billetter gjelder"
+        }
+    ]
+}
