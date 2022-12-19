@@ -1,79 +1,98 @@
-<template>
-  <v-app id="app">
-    <l-map 
-      ref="diagram"
-      :minZoom="minZoom"
-      :maxZoom="maxZoom"
-      :style="diagramStyle"
-      :crs="crs"
-      @ready="onDiagramReady()">
-      <l-geo-json
-        name="station"
-        ref="geoJson"
-        :geojson="stationGeoJson"
-        :options="featureJsonOptions"
-        @ready="onStationGeoJsonReady()">
-      </l-geo-json>
-    </l-map>
-    <v-bottom-sheet
-      v-model="infoPane"
-      inset
-    >
-      <v-sheet
-        class="text-center"
-        height="200px"
-      >
-        <v-btn
-          class="mt-6"
-          text
-          color="red"
-          @click="infoPane = !infoPane"
-        >
-          close
-        </v-btn>
-      </v-sheet>
-    </v-bottom-sheet>
-  </v-app>
+<template lang="pug">
+v-app#app
+  #toolbar
+    v-text-field(solo)
+  l-map(
+    ref="diagram"
+    :minZoom="minZoom"
+    :maxZoom="maxZoom"
+    :style="diagramStyle"
+    :crs="crs"
+    :options="diagramOption"
+    @ready="onDiagramReady()"
+  )
+    l-control(position="bottomright")
+      zoom-control(@zoomIn="zoomIn" @zoomOut="zoomOut")
+    l-geo-json(
+      name="station"
+      ref="geoJson"
+      :geojson="stationGeoJson"
+      :options="featureJsonOptions"
+      @ready="onStationGeoJsonReady()")
+  info-pane(:info="infoPane")
 </template>
 
 <script>
-import L from 'leaflet';
-import stationGeoJson from './station.json';
-import informationJson from './information.json';
+import L from "leaflet";
+import stationGeoJson from "./station.json";
+import informationJson from "./information.json";
+import InfoPane from "@/components/InfoPane";
+import { ZoomControl } from "@/components/UI";
 
 export default {
-  name: 'App',
-  components: {  },
+  name: "App",
+  components: { InfoPane, ZoomControl },
   data: () => ({
-    infoPane: false,
+    infoPane: {
+      value: false,
+      type: "",
+      info: {},
+    },
     diagram: null,
     diagramStyle: {
-      'z-index': 0,
+      "z-index": 0,
       width: `${window.innerWidth}px`,
-      height: `${window.innerHeight}px`
+      height: `${window.innerHeight}px`,
     },
+    diagramOption: {
+      attributionControl: false,
+      zoomControl: false,
+    },  
     stationGeoJson: stationGeoJson,
     featureLayer: null,
-    featureJsonOptions: null,  
+    featureJsonOptions: null,
     minZoom: 10,
     maxZoom: 16,
     diagramImage: null,
     crs: L.CRS.Simple,
-    informationJson: informationJson
+    informationJson: informationJson,
   }),
   methods: {
+    zoomIn() {
+      if (this.diagram) this.diagram.zoomIn();
+    },
+    zoomOut() {
+      if (this.diagram) this.diagram.zoomOut();
+    },
     onFeatureClick(feature) {
-      this.infoPane = true;
+      const { stationId, zoneId } = feature.target?.feature?.properties;
 
-      const { stationId } = feature.target?.feature?.properties;
+      const stationInfo = this.informationJson.station.find(
+        (station) => station.id === stationId
+      );
 
-      const stationInfo = this.informationJson.station.find((station) => station.id === stationId);
-      console.log(stationInfo);
+      const lineInfo = this.informationJson.line.filter((line) =>
+        line.route?.some((route) => route?.includes(stationId))
+      );
+
+      const zoneInfo = this.informationJson.zone.find(
+        (zone) => zone.id === zoneId
+      )
+
+      this.infoPane = {
+        value: true,
+        type: "station",
+        info: {
+          station: stationInfo,
+          line: lineInfo,
+          zone: zoneInfo
+        },
+      };
     },
     onEachFeature(feature, layer) {
       layer.on({
-        click: this.onFeatureClick
-      })
+        click: this.onFeatureClick,
+      });
     },
     onStationGeoJsonReady() {
       this.featureLayer = this.$refs.geoJson.mapObject;
@@ -81,33 +100,49 @@ export default {
     onDiagramReady() {
       this.diagram = this.$refs.diagram.mapObject;
 
-      const diagramUrl = '/Oslo_Kollektivkart_2022.svg';
-      const bounds = L.latLngBounds([[0, 0], [0.19636, 0.13889]]);
-      
+      const diagramUrl = "/Oslo_Kollektivkart_2022.png";
+      const bounds = L.latLngBounds([
+        [0, 0],
+        [0.19636, 0.13889],
+      ]);
+
       L.imageOverlay(diagramUrl, bounds).addTo(this.diagram);
 
       this.diagram.fitBounds(bounds);
 
-      this.diagram.addEventListener('click', function(ev) {
+      this.diagram.addEventListener("click", function (ev) {
         console.log(ev);
       });
     },
   },
   created() {
     this.featureJsonOptions = {
-      onEachFeature: this.onEachFeature
-    }
-  }
-}
+      onEachFeature: this.onEachFeature,
+    };
+  },
+};
 </script>
 
 <style>
-html, body, #app {
+html,
+body,
+#app {
   height: 100%;
   margin: 0;
 }
 
 .v-dialog__container {
-    display: unset; 
+  display: unset;
+}
+
+#toolbar {
+  z-index: 9;
+  position: absolute;
+  width: 90vw;
+  top: 12px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
 }
 </style>
