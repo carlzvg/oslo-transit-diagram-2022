@@ -1,7 +1,8 @@
 <template lang="pug">
 v-app#app
   #toolbar
-    v-text-field(solo)
+    .font-weight-black Oslo Transit Diagram 2022
+    v-text-field(solo dense hide-hint)
   l-map(
     ref="diagram"
     :minZoom="minZoom"
@@ -12,7 +13,7 @@ v-app#app
     @ready="onDiagramReady()"
   )
     l-control(position="bottomright")
-      zoom-control(@zoomIn="zoomIn" @zoomOut="zoomOut")
+      zoom-control(@zoomIn="zoomIn" @zoomOut="zoomOut" @zoomToExtent="zoomToExtent")
     l-geo-json(
       name="station"
       ref="geoJson"
@@ -58,6 +59,14 @@ export default {
     informationJson: informationJson,
   }),
   methods: {
+    zoomToExtent() {
+      const bounds = L.latLngBounds([
+        [0, 0],
+        [0.19636, 0.13889],
+      ]);
+
+      if (this.diagram) this.diagram.fitBounds(bounds);
+    },
     zoomIn() {
       if (this.diagram) this.diagram.zoomIn();
     },
@@ -100,7 +109,7 @@ export default {
     onDiagramReady() {
       this.diagram = this.$refs.diagram.mapObject;
 
-      const diagramUrl = "/Oslo_Kollektivkart_2022.png";
+      const diagramUrl = "/Oslo_Kollektivkart_2022.svg";
       const bounds = L.latLngBounds([
         [0, 0],
         [0.19636, 0.13889],
@@ -138,11 +147,13 @@ body,
 #toolbar {
   z-index: 9;
   position: absolute;
-  width: 90vw;
-  top: 12px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 80vw;
+  max-width: 800px;
+  top: 18px;
   left: 0;
   right: 0;
+  margin-left: auto;
+  margin-right: auto;
+
 }
 </style>

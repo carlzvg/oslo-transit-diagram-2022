@@ -1,8 +1,10 @@
 <template lang="pug">
 #zoom-control
-  v-btn.btn-zoom(fab bottom right small @click="zoomIn")
+  v-btn(fab bottom right small @click="$emit('zoomToExtent')")
+    v-icon mdi-fullscreen-exit
+  v-btn.mt-2(fab bottom right small @click="$emit('zoomIn')")
     v-icon mdi-plus
-  v-btn.btn-zoom.mt-2(fab bottom right small @click="zoomOut")
+  v-btn.mt-2(fab bottom right small @click="$emit('zoomOut')")
     v-icon mdi-minus
 </template>
 
@@ -10,14 +12,6 @@
 export default {
   props: {
     disabled: Boolean,
-  },
-  methods: {
-    zoomIn() {
-      this.$emit("zoomIn");
-    },
-    zoomOut() {
-      this.$emit("zoomOut");
-    },
   },
 };
 </script>
