@@ -1,4 +1,6 @@
-# oslo-transit-diagram-2022-2
+# Oslo Transit Diagram 2022
+
+As inspired by
 
 ## Project setup
 ```

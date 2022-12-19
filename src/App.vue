@@ -154,6 +154,5 @@ body,
   right: 0;
   margin-left: auto;
   margin-right: auto;
-
 }
 </style>
