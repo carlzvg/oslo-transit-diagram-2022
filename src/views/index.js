@@ -1,4 +1,5 @@
 import DiagramView from './DiagramView.vue';
-import AboutView from './AboutView.vue'
+import AboutView from './AboutView.vue';
+import LineView from './LineView.vue';
 
-export { DiagramView, AboutView };
+export { DiagramView, AboutView, LineView };

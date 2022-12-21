@@ -5,10 +5,15 @@
 </template>
 
 <script>
+import graph, { findPath } from './graphSearch';
 export default {
   data: () => ({
     keyword: ''
-  })
+  }),
+  mounted() {
+    console.log('graph', graph);
+    console.log(findPath(1, 75));
+  }
 }
 </script>
 

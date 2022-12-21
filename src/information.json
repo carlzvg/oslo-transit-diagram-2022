@@ -95,11 +95,6 @@
             "norwegian": "Nationaltheatret"
         },
         {
-            "id": 19,
-            "zone": 1,
-            "norwegian": "Stortinget"
-        },
-        {
             "id": 20,
             "zone": 1,
             "norwegian": "Oslo S Jernbanetorget"
@@ -240,6 +235,161 @@
                 "norwegian": "Ingen avstigning i retning Halden",
                 "english": "No disembarking in direction Halden"
             }
+        },
+        {
+            "id": 46,
+            "zone": 1,
+            "norwegian": "Tøyen"
+        },
+        {
+            "id": 47,
+            "zone": 1,
+            "norwegian": "Grefsen"
+        },
+        {
+            "id": 48,
+            "zone": 1,
+            "norwegian": "Nydalen"
+        },
+        {
+            "id": 49,
+            "zone": 1,
+            "norwegian": "Kjelsås"
+        },
+        {
+            "id": 50,
+            "zone": 1,
+            "norwegian": "Snippen"
+        },
+        {
+            "id": 51,
+            "zone": 1,
+            "norwegian": "Movatn"
+        },
+        {
+            "id": 52,
+            "zone": 4,
+            "norwegian": "Nittedal"
+        },
+        {
+            "id": 53,
+            "zone": 4,
+            "norwegian": "Åneby"
+        },
+        {
+            "id": 54,
+            "zone": 4,
+            "norwegian": "Varingskollen"
+        },
+        {
+            "id": 55,
+            "zone": 4,
+            "norwegian": "Hakadal"
+        },
+        {
+            "id": 56,
+            "zone": 90,
+            "norwegian": "Stryken",
+            "extra": {
+                "norwegian": "Begrenset driftstid",
+                "english": "Limited service"
+            }
+        },
+        {
+            "id": 57,
+            "zone": 90,
+            "norwegian": "Harestua"
+        },
+        {
+            "id": 58,
+            "zone": 90,
+            "norwegian": "Grua"
+        },
+        {
+            "id": 59,
+            "zone": 90,
+            "norwegian": "Roa"
+        },
+        {
+            "id": 60,
+            "zone": 90,
+            "norwegian": "Lunner"
+        },
+        {
+            "id": 61,
+            "zone": 90,
+            "norwegian": "Gran"
+        },
+        {
+            "id": 62,
+            "zone": 90,
+            "norwegian": "Jaren"
+        },
+        {
+            "id": 63,
+            "zone": 90,
+            "norwegian": "Kongsberg"
+        },
+        {
+            "id": 64,
+            "zone": 90,
+            "norwegian": "Darbu"
+        },
+        {
+            "id": 65,
+            "zone": 90,
+            "norwegian": "Vestfossen"
+        },
+        {
+            "id": 66,
+            "zone": 90,
+            "norwegian": "Hokksund"
+        },
+        {
+            "id": 67,
+            "zone": 90,
+            "norwegian": "Steinberg"
+        },
+        {
+            "id": 68,
+            "zone": 90,
+            "norwegian": "Mjøndalen"
+        },
+        {
+            "id": 69,
+            "zone": 90,
+            "norwegian": "Gulskogen"
+        },
+        {
+            "id": 70,
+            "zone": 90,
+            "norwegian": "Drammen"
+        },
+        {
+            "id": 71,
+            "zone": 90,
+            "norwegian": "Brakerøya"
+        },
+        {
+            "id": 72,
+            "zone": 90,
+            "norwegian": "Lier"
+        },
+        {
+            "id": 73,
+            "zone": 6,
+            "norwegian": "Oslo Lufthavn",
+            "english": "Oslo Airport"
+        },
+        {
+            "id": 74,
+            "zone": 6,
+            "norwegian": "Eidsvoll verk"
+        },
+        {
+            "id": 75,
+            "zone": 6,
+            "norwegian": "Eidsvoll"
         }
     ],
     "type": [
@@ -262,20 +412,53 @@
     "line": [
         {
             "id": 1,
+            "type": 1,
             "code": "L1",
             "route": [
-                [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32],
-                [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32]
+                [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32],
+                [6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32]
             ],
             "color": "D9328C"
         },
         {
             "id": 2,
+            "type": 1,
             "code": "L2",
             "route": [
-                [15, 16, 17, 18, 19, 20]
+                [15, 16, 17, 18, 20, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45]
             ],
             "color": "5BC2EF"
+        },
+        {
+            "id": 3,
+            "type": 1,
+            "code": "L2x",
+            "route": [
+                [15, 16, 17, 18, 20, 35, 36, 38, 41, 42, 43, 45]
+            ],
+            "color": "5BC2EF",
+            "extra": {
+                "norwegian": "Stopper ikke på alle stasjoner",
+                "english": "Limited stops"
+            }
+        },
+        {
+            "id": 4,
+            "type": 1,
+            "code": "L3",
+            "route": [
+                [20, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62]
+            ],
+            "color": "85C442"
+        },
+        {
+            "id": 5,
+            "type": 1,
+            "code": "L12",
+            "route": [
+                [63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 6, 12, 16, 17, 18, 20, 32, 73, 74, 75]
+            ],
+            "color": "E41D25"
         }
     ],
     "zone": [
@@ -300,12 +483,17 @@
             "english": "Zone 2Ø"
         },
         {
-            "id": 4,
+            "id": 5,
             "norwegian": "Sone 2s",
             "english": "Zone 2s"
         },
         {
             "id": 6,
+            "norwegian": "Sone 4N",
+            "english": "Zone 4N"
+        },
+        {
+            "id": 90,
             "norwegian": "Andre billetter gjelder",
             "english": "Andre billetter gjelder"
         }

@@ -10,6 +10,9 @@ v-app#app
     v-btn(value="diagram" to="/")
       span Diagram
       v-icon mdi-map
+    v-btn(value="line" to="line")
+      span Transport
+      v-icon mdi-train
     v-btn(value="about" to="about")
       span About
       v-icon mdi-information

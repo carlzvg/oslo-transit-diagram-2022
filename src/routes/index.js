@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
-import { DiagramView, AboutView } from '@/views';
+import { DiagramView, AboutView, LineView } from '@/views';
 
 Vue.use(VueRouter);
 
@@ -9,6 +9,10 @@ const routes = [
   {
     path: '/',
     component: DiagramView
+  },
+  {
+    path: '/line',
+    component: LineView
   },
   {
     path: '/about',
