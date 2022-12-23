@@ -4,7 +4,7 @@
     v-btn(text small :color="highlightLanguage('norwegian')" @click="lang = 'norwegian'") NOR
     | |
     v-btn(text small :color="highlightLanguage('english')" @click="lang = 'english'") ENG
-  .transport-types
+  v-container
     .transport-type.mb-3(v-for="transportType in types" :key="transportType.id")
       h1 {{ transportType[lang] }}
       v-expansion-panels(accordion)
@@ -70,9 +70,7 @@ export default {
       return `stop-${routeIndex}-${stopIndex}-${type}`;
     },
     renderRouteLineCss(line) {
-      return {
-        '--lineColor': `#${line.color}`
-      };
+      return { '--lineColor': `#${line.color}` };
     }
   },
 }
@@ -80,7 +78,7 @@ export default {
 
 <style scoped>
 #line-view {
-  height: 100%;
+  height: calc(100vh - 36px);
   max-height: 100%;
   overflow-y: scroll;
 }
@@ -100,6 +98,10 @@ export default {
 
 .v-timeline:before {
   background: var(--lineColor) !important;
+}
+
+.v-expansion-panel--active > .v-expansion-panel-header {
+  min-height: unset;
 }
 
 </style>
