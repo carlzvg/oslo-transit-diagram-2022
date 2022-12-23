@@ -4,27 +4,26 @@
     v-btn(text small :color="highlightLanguage('norwegian')" @click="lang = 'norwegian'") NOR
     | |
     v-btn(text small :color="highlightLanguage('english')" @click="lang = 'english'") ENG
-  v-container
+  .transport-types
     .transport-type.mb-3(v-for="transportType in types" :key="transportType.id")
       h1 {{ transportType[lang] }}
       v-expansion-panels(accordion)
         v-expansion-panel(v-for="line in filterLinesByType(transportType.id)" :key="line.id")
           v-expansion-panel-header 
-            v-chip(label small :color="getLineCssColor(line)")
+            v-chip.mr-4(label small :color="getLineCssColor(line)")
               .white--text.font-weight-black {{ line.code }}
           v-expansion-panel-content
-            .route(v-for="(route, index) in line.route" :key="getRouteKey(line, index)")
+            .route(v-for="(route, routeIndex) in line.route" 
+              :key="getRouteKey(line, routeIndex)"
+              :style="renderRouteLineCss(line)")
               h4 {{ renderRouteName(route) }}
-              v-stepper(vertical)
-                .line-stop(v-for="")
-                v-stepper-step(step="1")
-                v-stepper-content(step="1")
-                v-stepper-step(step="2")
-                v-stepper-content(step="2")
-                v-stepper-step(step="3")
-                v-stepper-content(step="3")
-                v-stepper-step(step="4")
-                v-stepper-content(step="4")
+              v-timeline.py-0.my-4(align-top dense dark)
+                v-timeline-item(
+                  v-for="(stop, stopIndex) in route" 
+                  :key="getStopKey(routeIndex, stopIndex, 'step')" 
+                  color="white"
+                  small)
+                  | {{ renderStationName(stop) }}
               
 </template>
 
@@ -59,15 +58,48 @@ export default {
 
       return `${firstStation.norwegian} - ${lastStation.norwegian}`;
     },
+    renderStationName(stationId) {
+      const station = this.getStationInfo(stationId);
+
+      return `${station.norwegian}`;
+    },
     getLineCssColor(line) {
       return `#${line.color}`;
     },
+    getStopKey(routeIndex, stopIndex, type) {
+      return `stop-${routeIndex}-${stopIndex}-${type}`;
+    },
+    renderRouteLineCss(line) {
+      return {
+        '--lineColor': `#${line.color}`
+      };
+    }
   },
 }
 </script>
 
 <style scoped>
 #line-view {
-  min-height: 100%;
+  height: 100%;
+  max-height: 100%;
+  overflow-y: scroll;
 }
+
+.v-application--is-ltr .v-timeline--dense:not(.v-timeline--reverse)::before {
+  left: calc(48px - 2px);
+  right: initial;
+}
+
+.v-timeline:before {
+  width: 4px;
+}
+
+.v-timeline > .v-timeline-item:last-child {
+  padding-bottom: 0px;
+}
+
+.v-timeline:before {
+  background: var(--lineColor) !important;
+}
+
 </style>
