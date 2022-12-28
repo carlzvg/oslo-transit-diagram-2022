@@ -77,12 +77,6 @@ export default {
 </script>
 
 <style scoped>
-#line-view {
-  height: calc(100vh - 36px);
-  max-height: 100%;
-  overflow-y: scroll;
-}
-
 .v-application--is-ltr .v-timeline--dense:not(.v-timeline--reverse)::before {
   left: calc(48px - 2px);
   right: initial;

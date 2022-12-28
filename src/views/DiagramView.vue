@@ -132,9 +132,6 @@ export default {
 </script>
 
 <style scoped>
-#diagram-view {
-  height: 100%;
-}
 .v-dialog__container {
   display: unset;
 }

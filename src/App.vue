@@ -1,11 +1,10 @@
 <template lang="pug">
 v-app#app
   v-main
-    router-view
+    router-view#router-view
   v-bottom-navigation(
     v-model="currentPage" 
     color="teal"
-    height="38"
     horizontal)
     v-btn(value="diagram" to="/")
       span Diagram
@@ -40,5 +39,10 @@ body,
 
 .v-bottom-navigation {
   background-color: #f5f5f5 !important;
+}
+
+#router-view {
+  height: calc(100vh - 56px);
+  overflow-y: scroll;
 }
 </style>

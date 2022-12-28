@@ -16,8 +16,4 @@ export default {
 </script>
 
 <style scoped>
-#about-view {
-  background-color: #FAF9F7;
-  min-height: 100%;
-}
 </style>
