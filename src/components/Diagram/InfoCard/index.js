@@ -1,5 +1,5 @@
-import InfoPane from './InfoPane.vue';
+import InfoCard from './InfoCard.vue';
 import StationCard from './StationCard.vue';
 
-export default InfoPane;
+export default InfoCard;
 export { StationCard };

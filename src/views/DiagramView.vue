@@ -1,6 +1,11 @@
 <template lang="pug">
 #diagram-view
   search-bar
+  info-card(
+    v-if="infoPane.value" 
+    :info="infoPane" 
+    @locate="zoomToFeature"
+    @close="infoPane.value = false")
   l-map(
     ref="diagram"
     :minZoom="minZoom"
@@ -18,19 +23,18 @@
       :geojson="stationGeoJson"
       :options="featureJsonOptions"
       @ready="onStationGeoJsonReady()")
-  info-pane(:info="infoPane")
 </template>
 
 <script>
 import L from "leaflet";
 import stationGeoJson from "@/station.json";
 import informationJson from "@/information.json";
-import InfoPane from "@/components/Diagram/InfoPane";
+import InfoCard from "@/components/Diagram/InfoCard";
 import { ZoomControl, SearchBar } from "@/components/Diagram";
 
 export default {
   name: "DiagramView",
-  components: { InfoPane, ZoomControl, SearchBar },
+  components: { InfoCard, ZoomControl, SearchBar },
   data: () => ({
     infoPane: {
       value: false,
@@ -51,7 +55,7 @@ export default {
     featureLayer: null,
     featureJsonOptions: null,
     minZoom: 10,
-    maxZoom: 16,
+    maxZoom: 14,
     diagramImage: null,
     crs: L.CRS.Simple,
     informationJson: informationJson,
@@ -60,7 +64,7 @@ export default {
     zoomToExtent() {
       const bounds = L.latLngBounds([
         [0, 0],
-        [0.19636, 0.13889],
+        [0.5891, 0.4167],
       ]);
 
       if (this.diagram) this.diagram.fitBounds(bounds);
@@ -70,6 +74,14 @@ export default {
     },
     zoomOut() {
       if (this.diagram) this.diagram.zoomOut();
+    },
+    zoomToFeature(geometry) {
+      // TODO: fix the zoom issue
+      console.log('geometry', geometry);
+      if (geometry) {
+        this.diagram.panTo(geometry.latlng);
+        this.diagram.setZoom(14);
+      }
     },
     onFeatureClick(feature) {
       const { stationId, zoneId } = feature.target?.feature?.properties;
@@ -108,10 +120,10 @@ export default {
     onDiagramReady() {
       this.diagram = this.$refs.diagram.mapObject;
 
-      const diagramUrl = "/Oslo_Kollektivkart_2022_compressed.png ";
+      const diagramUrl = "/Oslo_Kollektivkart_2022_compressed.png";
       const bounds = L.latLngBounds([
         [0, 0],
-        [0.19636, 0.13889],
+        [0.5891, 0.4167],
       ]);
 
       L.imageOverlay(diagramUrl, bounds).addTo(this.diagram);
