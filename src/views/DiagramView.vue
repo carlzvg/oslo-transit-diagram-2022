@@ -108,7 +108,7 @@ export default {
     onDiagramReady() {
       this.diagram = this.$refs.diagram.mapObject;
 
-      const diagramUrl = "/Oslo_Kollektivkart_2022.svg";
+      const diagramUrl = "/Oslo_Kollektivkart_2022_compressed.png ";
       const bounds = L.latLngBounds([
         [0, 0],
         [0.19636, 0.13889],
