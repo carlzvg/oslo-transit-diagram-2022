@@ -12,6 +12,7 @@
     "graphology": "^0.25.1",
     "graphology-shortest-path": "^2.0.1",
     "leaflet": "^1.9.3",
+    "lunr": "^2.3.9",
     "vue": "^2.6.14",
     "vue-pug-plugin": "^2.0.3",
     "vue-router": "3",

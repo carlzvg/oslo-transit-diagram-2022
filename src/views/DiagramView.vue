@@ -1,6 +1,6 @@
 <template lang="pug">
 #diagram-view
-  search-bar
+  search-bar(@updateSearch="returnSearchResult")
   info-card(
     v-if="infoPane.value" 
     :info="infoPane" 
@@ -76,12 +76,13 @@ export default {
       if (this.diagram) this.diagram.zoomOut();
     },
     zoomToFeature(geometry) {
-      // TODO: fix the zoom issue
-      console.log('geometry', geometry);
       if (geometry) {
-        this.diagram.panTo(geometry.latlng);
-        this.diagram.setZoom(14);
+        this.diagram.setView(geometry.latlng, 14);
       }
+    },
+    returnSearchResult(result) {
+      console.log('returnSearchResult', result);
+      this.infoPane = result;
     },
     onFeatureClick(feature) {
       const { stationId, zoneId } = feature.target?.feature?.properties;
