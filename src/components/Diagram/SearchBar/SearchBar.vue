@@ -1,6 +1,6 @@
 <template lang="pug">
 #search-bar
-  .font-weight-black Oslo Transit Diagram 2022
+  #diagram-title.font-weight-black Oslo Transit Diagram 2022
   v-autocomplete(
     v-model="keyword"
     :items="stationsInfo"
@@ -13,13 +13,11 @@
     hide-selected
     solo dense hide-hint
     @input="search")
+    //- TODO: make update on dropdown menu
 </template>
 
 <script>
-// import graph, { findPath } from './graphSearch';
-// import searchIndex from './lunrSearch';
 import information from '@/information.json';
-import station from '@/station.json';
 
 export default {
   data: () => ({
@@ -28,36 +26,12 @@ export default {
   }),
   methods: {
     search() {
-      const { id: stationId, zone: zoneId } = this.keyword;
+      const { id } = this.keyword;
 
-      const lineInfo = information.line.filter((line) =>
-        line.route?.some((route) => route?.includes(stationId))
-      );
-
-      const zoneInfo = information.zone.find(
-        (zone) => zone.id === zoneId
-      )
-
-      const feature = station?.features.find((f) => f.properties?.stationId == stationId);
-
-      this.$emit('updateSearch', {
-        value: true,
-        type: "station",
-        info: {
-          station: this.keyword,
-          line: lineInfo,
-          zone: zoneInfo,
-          geometry: feature
-        },
-      });
+      this.$emit('updateSearch', id);
     }
   },
   mounted() {
-    // console.log('graph', graph);
-    // console.log(findPath(1, 75));
-
-    // console.log(searchIndex.search('Gulskogen'));
-
     this.stationsInfo = information.station.map((stn) => {
       const altName = stn?.english ? ` (${stn.english})` : '';
 
@@ -69,6 +43,9 @@ export default {
 </script>
 
 <style scoped>
+#diagram-title {
+  background-color: #FAF9F7;
+}
 #search-bar {
   z-index: 9;
   position: absolute;

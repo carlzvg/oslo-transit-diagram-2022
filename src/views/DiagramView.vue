@@ -1,6 +1,6 @@
 <template lang="pug">
 #diagram-view
-  search-bar(@updateSearch="returnSearchResult")
+  search-bar(@updateSearch="openInfoPane")
   info-card(
     v-if="infoPane.value" 
     :info="infoPane" 
@@ -80,13 +80,7 @@ export default {
         this.diagram.setView(geometry.latlng, 14);
       }
     },
-    returnSearchResult(result) {
-      console.log('returnSearchResult', result);
-      this.infoPane = result;
-    },
-    onFeatureClick(feature) {
-      const { stationId, zoneId } = feature.target?.feature?.properties;
-
+    openInfoPane(stationId, extraInfo = {}) {
       const stationInfo = this.informationJson.station.find(
         (station) => station.id === stationId
       );
@@ -96,8 +90,8 @@ export default {
       );
 
       const zoneInfo = this.informationJson.zone.find(
-        (zone) => zone.id === zoneId
-      )
+        (zone) => zone.id === stationInfo.zone
+      );
 
       this.infoPane = {
         value: true,
@@ -106,9 +100,14 @@ export default {
           station: stationInfo,
           line: lineInfo,
           zone: zoneInfo,
-          geometry: feature
+          ...extraInfo
         },
       };
+    },
+    onFeatureClick(feature) {
+      const { stationId } = feature.target?.feature?.properties;
+
+      this.openInfoPane(stationId);
     },
     onEachFeature(feature, layer) {
       layer.on({

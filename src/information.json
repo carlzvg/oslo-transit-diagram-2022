@@ -463,7 +463,7 @@
     ],
     "zone": [
         {
-            "code": 1,
+            "id": 1,
             "norwegian": "Sone 1",
             "english": "Zone 1"
         },
