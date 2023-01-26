@@ -7,7 +7,7 @@
   v-container
     .transport-type.mb-3(v-for="transportType in types" :key="transportType.id")
       h1 {{ transportType[lang] }}
-      v-expansion-panels(accordion)
+      v-expansion-panels(v-model="selected[transportType.id]" accordion)
         v-expansion-panel(v-for="line in filterLinesByType(transportType.id)" :key="line.id")
           v-expansion-panel-header 
             v-chip.mr-4(label small :color="getLineCssColor(line)")
@@ -35,7 +35,8 @@ export default {
     lang: 'norwegian',
     types: information.type,
     lines: information.line,
-    stations: information.station
+    stations: information.station,
+    selected: {},
   }),  
   methods: {
     highlightLanguage(displayLang) {
@@ -73,6 +74,18 @@ export default {
       return { '--lineColor': `#${line.color}` };
     }
   },
+  mounted() {
+    const selectedKeys = this.types.map((t) => t.id);
+    selectedKeys.forEach((key) => this.selected[key] = undefined);
+
+    const selectedLineId = this.$route.query.lineId;
+    const selectedLine = this.lines.find((line) => line.id == selectedLineId);
+    const finalPosition = this.filterLinesByType(selectedLine.type).findIndex((line) => line.id == selectedLineId);
+
+    if (selectedLine) {
+      this.selected[selectedLine.type] = finalPosition;
+    }
+  }
 }
 </script>
 
