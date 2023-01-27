@@ -430,6 +430,83 @@
             "id": 83,
             "zone": 6,
             "norwegian": "Dal"
+        },
+        {
+            "id": 84,
+            "zone": 7,
+            "norwegian": "Tuen",
+            "extra": {
+                "norwegian": "Begrenset driftstid",
+                "english": "Limited service"
+            }
+        },
+        {
+            "id": 85,
+            "zone": 7,
+            "norwegian": "Nerdrum"
+        },
+        {
+            "id": 86,
+            "zone": 7,
+            "norwegian": "Fetsund"
+        },
+        {
+            "id": 87,
+            "zone": 7,
+            "norwegian": "Svingen"
+        },
+        {
+            "id": 88,
+            "zone": 7,
+            "norwegian": "Sørumsand"
+        },
+        {
+            "id": 89,
+            "zone": 7,
+            "norwegian": "Blaker"
+        },
+        {
+            "id": 90,
+            "zone": 7,
+            "norwegian": "Rånåsfoss"
+        },
+        {
+            "id": 91,
+            "zone": 6,
+            "norwegian": "Auli"
+        },
+        {
+            "id": 92,
+            "zone": 6,
+            "norwegian": "Haga",
+            "extra": {
+                "norwegian": "Begrenset driftstid",
+                "english": "Limited service"
+            }
+        },
+        {
+            "id": 93,
+            "zone": 6,
+            "norwegian": "Bodung",
+            "extra": {
+                "norwegian": "Begrenset driftstid",
+                "english": "Limited service"
+            }
+        },
+        {
+            "id": 94,
+            "zone": 6,
+            "norwegian": "Årnes"
+        },
+        {
+            "id": 95,
+            "zone": 90,
+            "norwegian": "Skarnes"
+        },
+        {
+            "id": 96,
+            "zone": 90,
+            "norwegian": "Kongsvinger"
         }
     ],
     "type": [
@@ -508,6 +585,15 @@
                 [70, 71, 72, 6, 12, 16, 17, 18, 20, 32, 76, 77, 78, 79, 80, 81, 82, 83]
             ],
             "color": "F4892E"
+        },
+        {
+            "id": 7,
+            "type": 1,
+            "code": "L14",
+            "route": [
+                [6, 12, 16, 17, 18, 20, 32, 84, 85, 86, 87, 89, 90, 91, 92, 93, 94, 95, 96]
+            ],
+            "color": "FBC12C"
         }
     ],
     "zone": [
