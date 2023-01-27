@@ -577,6 +577,61 @@
             "id": 110,
             "zone": 90,
             "norwegian": "Göteborg"
+        },
+        {
+            "id": 111,
+            "zone": 5,
+            "norwegian": "Kråkstad"
+        },
+        {
+            "id": 112,
+            "zone": 5,
+            "norwegian": "Skotbu"
+        },
+        {
+            "id": 113,
+            "zone": 90,
+            "norwegian": "Tomter"
+        },
+        {
+            "id": 114,
+            "zone": 90,
+            "norwegian": "Knapstad"
+        },
+        {
+            "id": 115,
+            "zone": 90,
+            "norwegian": "Spydeberg"
+        },
+        {
+            "id": 116,
+            "zone": 90,
+            "norwegian": "Askim"
+        },
+        {
+            "id": 117,
+            "zone": 90,
+            "norwegian": "Slitu"
+        },
+        {
+            "id": 118,
+            "zone": 90,
+            "norwegian": "Mysen"
+        },
+        {
+            "id": 119,
+            "zone": 90,
+            "norwegian": "Eidsberg"
+        },
+        {
+            "id": 120,
+            "zone": 90,
+            "norwegian": "Heia"
+        },
+        {
+            "id": 121,
+            "zone": 90,
+            "norwegian": "Rakkestad"
         }
     ],
     "type": [
@@ -685,6 +740,20 @@
             "extra": {
                 "norwegian": "Begrenset driftstid mellom Halden og Göteborg",
                 "english": "Limited service between Halden and Gothenburg"
+            }
+        },
+        {
+            "id": 10,
+            "type": 1,
+            "code": "L22",
+            "route": [
+                [17, 18, 20, 38, 45, 111, 112, 113, 114, 115, 116, 117, 118],
+                [17, 18, 20, 38, 43, 45, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121]
+            ],
+            "color": "1A63B0",
+            "extra": {
+                "norwegian": "Begrenset driftstid mellom Mysen og Rakkestad",
+                "english": "Limited service between Mysen and Rakkestad"
             }
         }
     ],
