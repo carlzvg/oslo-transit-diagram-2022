@@ -632,6 +632,36 @@
             "id": 121,
             "zone": 90,
             "norwegian": "Rakkestad"
+        },
+        {
+            "id": 122,
+            "zone": 90,
+            "norwegian": "Tangen"
+        },
+        {
+            "id": 123,
+            "zone": 90,
+            "norwegian": "Stange"
+        },
+        {
+            "id": 124,
+            "zone": 90,
+            "norwegian": "Hamar"
+        },
+        {
+            "id": 125,
+            "zone": 90,
+            "norwegian": "Brumunddal"
+        },
+        {
+            "id": 126,
+            "zone": 90,
+            "norwegian": "Moelv"
+        },
+        {
+            "id": 127,
+            "zone": 90,
+            "norwegian": "Lillehammer"
         }
     ],
     "type": [
@@ -755,6 +785,15 @@
                 "norwegian": "Begrenset driftstid mellom Mysen og Rakkestad",
                 "english": "Limited service between Mysen and Rakkestad"
             }
+        },
+        {
+            "id": 11,
+            "type": 1,
+            "code": "R10",
+            "route": [
+                [70, 6, 12, 16, 17, 18, 20, 32, 73, 75, 122, 123, 124, 125, 126, 127]
+            ],
+            "color": "9E1B2A"
         }
     ],
     "zone": [
