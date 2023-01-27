@@ -390,6 +390,46 @@
             "id": 75,
             "zone": 6,
             "norwegian": "Eidsvoll"
+        },
+        {
+            "id": 76,
+            "zone": 4,
+            "norwegian": "Leirsund"
+        },
+        {
+            "id": 77,
+            "zone": 7,
+            "norwegian": "Frogner"
+        },
+        {
+            "id": 78,
+            "zone": 7,
+            "norwegian": "Lindeberg"
+        },
+        {
+            "id": 79,
+            "zone": 7,
+            "norwegian": "Kløfta"
+        },
+        {
+            "id": 80,
+            "zone": 6,
+            "norwegian": "Jessheim"
+        },
+        {
+            "id": 81,
+            "zone": 6,
+            "norwegian": "Nordby"
+        },
+        {
+            "id": 82,
+            "zone": 6,
+            "norwegian": "Hauerseter"
+        },
+        {
+            "id": 83,
+            "zone": 6,
+            "norwegian": "Dal"
         }
     ],
     "type": [
@@ -459,6 +499,15 @@
                 [63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 6, 12, 16, 17, 18, 20, 32, 73, 74, 75]
             ],
             "color": "E41D25"
+        },
+        {
+            "id": 6,
+            "type": 1,
+            "code": "L13",
+            "route": [
+                [70, 71, 72, 6, 12, 16, 17, 18, 20, 32, 76, 77, 78, 79, 80, 81, 82, 83]
+            ],
+            "color": "F4892E"
         }
     ],
     "zone": [
@@ -491,6 +540,11 @@
             "id": 6,
             "norwegian": "Sone 4N",
             "english": "Zone 4N"
+        },
+        {
+            "id": 7,
+            "norwegian": "Sone 3Ø",
+            "english": "Zone 3Ø"
         },
         {
             "id": 90,

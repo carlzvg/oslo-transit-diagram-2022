@@ -54,8 +54,8 @@ export default {
     stationGeoJson: stationGeoJson,
     featureLayer: null,
     featureJsonOptions: null,
-    minZoom: 10,
-    maxZoom: 14,
+    minZoom: -20,
+    maxZoom: 1,
     diagramImage: null,
     crs: L.CRS.Simple,
     informationJson: informationJson,
@@ -63,8 +63,8 @@ export default {
   methods: {
     zoomToExtent() {
       const bounds = L.latLngBounds([
-        [0, 0],
-        [0.5891, 0.4167],
+        [-5891, 0],
+        [0, 4167],
       ]);
 
       if (this.diagram) this.diagram.fitBounds(bounds);
@@ -122,8 +122,8 @@ export default {
 
       const diagramUrl = "/Oslo_Kollektivkart_2022_compressed.png";
       const bounds = L.latLngBounds([
-        [0, 0],
-        [0.5891, 0.4167],
+        [-5891, 0],
+        [0, 4167],
       ]);
 
       L.imageOverlay(diagramUrl, bounds).addTo(this.diagram);

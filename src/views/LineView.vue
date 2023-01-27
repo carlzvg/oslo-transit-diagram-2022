@@ -9,7 +9,7 @@
       h1 {{ transportType[lang] }}
       v-expansion-panels(v-model="selected[transportType.id]" accordion)
         v-expansion-panel(v-for="line in filterLinesByType(transportType.id)" :key="line.id")
-          v-expansion-panel-header 
+          v-expansion-panel-header(:id="getLineRefKey(line)")
             v-chip.mr-4(label small :color="getLineCssColor(line)")
               .white--text.font-weight-black {{ line.code }}
           v-expansion-panel-content
@@ -37,7 +37,7 @@ export default {
     lines: information.line,
     stations: information.station,
     selected: {},
-  }),  
+  }),
   methods: {
     highlightLanguage(displayLang) {
       return this.lang === displayLang ? 'primary' : '';
@@ -72,18 +72,29 @@ export default {
     },
     renderRouteLineCss(line) {
       return { '--lineColor': `#${line.color}` };
+    },
+    getLineRefKey(line) {
+      return `line-${line.id}`;
     }
   },
-  mounted() {
+  created() {
     const selectedKeys = this.types.map((t) => t.id);
     selectedKeys.forEach((key) => this.selected[key] = undefined);
 
     const selectedLineId = this.$route.query.lineId;
     const selectedLine = this.lines.find((line) => line.id == selectedLineId);
-    const finalPosition = this.filterLinesByType(selectedLine.type).findIndex((line) => line.id == selectedLineId);
 
     if (selectedLine) {
+      const finalPosition = this.filterLinesByType(selectedLine.type).findIndex((line) => line.id == selectedLine.id);
+      
       this.selected[selectedLine.type] = finalPosition;
+    }
+  },
+  async mounted() {
+    const selectedLineId = this.$route.query.lineId;
+
+    if (selectedLineId) {
+      await this.$vuetify.goTo(`#line-${selectedLineId}`);
     }
   }
 }
