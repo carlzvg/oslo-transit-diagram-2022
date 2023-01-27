@@ -507,6 +507,31 @@
             "id": 96,
             "zone": 90,
             "norwegian": "Kongsvinger"
+        },
+        {
+            "id": 97,
+            "zone": 5,
+            "norwegian": "Ås"
+        },
+        {
+            "id": 98,
+            "zone": 5,
+            "norwegian": "Vestby"
+        },
+        {
+            "id": 99,
+            "zone": 5,
+            "norwegian": "Sonsveien"
+        },
+        {
+            "id": 100,
+            "zone": 5,
+            "norwegian": "Kambo"
+        },
+        {
+            "id": 101,
+            "zone": 5,
+            "norwegian": "Moss"
         }
     ],
     "type": [
@@ -594,6 +619,15 @@
                 [6, 12, 16, 17, 18, 20, 32, 84, 85, 86, 87, 89, 90, 91, 92, 93, 94, 95, 96]
             ],
             "color": "FBC12C"
+        },
+        {
+            "id": 8,
+            "type": 1,
+            "code": "L21",
+            "route": [
+                [15, 16, 17, 18, 20, 36, 45, 97, 98, 99, 100, 101]
+            ],
+            "color": "836CAE"
         }
     ],
     "zone": [
