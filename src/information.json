@@ -525,13 +525,58 @@
         },
         {
             "id": 100,
-            "zone": 5,
+            "zone": 90,
             "norwegian": "Kambo"
         },
         {
             "id": 101,
-            "zone": 5,
+            "zone": 90,
             "norwegian": "Moss"
+        },
+        {
+            "id": 102,
+            "zone": 90,
+            "norwegian": "Rygge"
+        },
+        {
+            "id": 103,
+            "zone": 90,
+            "norwegian": "Råde"
+        },
+        {
+            "id": 104,
+            "zone": 90,
+            "norwegian": "Fredrikstad"
+        },
+        {
+            "id": 105,
+            "zone": 90,
+            "norwegian": "Sarpsborg"
+        },
+        {
+            "id": 106,
+            "zone": 90,
+            "norwegian": "Halden"
+        },
+        {
+            "id": 107,
+            "zone": 90,
+            "norwegian": "Ed"
+        },
+        {
+            "id": 108,
+            "zone": 90,
+            "norwegian": "Öxnered"
+        },
+        {
+            "id": 109,
+            "zone": 90,
+            "norwegian": "Trollhättan"
+        },
+        {
+            "id": 110,
+            "zone": 90,
+            "norwegian": "Göteborg"
         }
     ],
     "type": [
@@ -628,6 +673,19 @@
                 [15, 16, 17, 18, 20, 36, 45, 97, 98, 99, 100, 101]
             ],
             "color": "836CAE"
+        },
+        {
+            "id": 9,
+            "type": 1,
+            "code": "R20",
+            "route": [
+                [20, 45, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110]
+            ],
+            "color": "843B92",
+            "extra": {
+                "norwegian": "Begrenset driftstid mellom Halden og Göteborg",
+                "english": "Limited service between Halden and Gothenburg"
+            }
         }
     ],
     "zone": [
@@ -669,7 +727,7 @@
         {
             "id": 90,
             "norwegian": "Andre billetter gjelder",
-            "english": "Andre billetter gjelder"
+            "english": "Other fares apply"
         }
     ]
 }
