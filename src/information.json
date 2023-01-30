@@ -662,6 +662,60 @@
             "id": 127,
             "zone": 90,
             "norwegian": "Lillehammer"
+        },
+        {
+            "id": 128,
+            "zone": 90,
+            "norwegian": "Skien"
+        },
+        {
+            "id": 129,
+            "zone": 90,
+            "norwegian": "Porsgrunn"
+        },
+        {
+            "id": 130,
+            "zone": 90,
+            "norwegian": "Larvik"
+        },
+        {
+            "id": 131,
+            "zone": 90,
+            "norwegian": "Sandefjord"
+        },
+        {
+            "id": 132,
+            "zone": 90,
+            "norwegian": "Torp",
+            "extra": {
+                "norwegian": "Begrenset driftstid",
+                "english": "Limited service"
+            }
+        },
+        {
+            "id": 133,
+            "zone": 90,
+            "norwegian": "Stokke"
+        },
+        {
+            "id": 134,
+            "zone": 90,
+            "norwegian": "Tønsberg"
+        },
+        {
+            "id": 135,
+            "zone": 90,
+            "norwegian": "Skoppum"
+        },
+        {
+            "id": 136,
+            "zone": 90,
+            "norwegian": "Holmestrand"
+        },
+        {
+            "id": 137,
+            "zone": 90,
+            "norwegian": "Sande"
         }
     ],
     "type": [
@@ -792,6 +846,15 @@
             "code": "R10",
             "route": [
                 [70, 6, 12, 16, 17, 18, 20, 32, 73, 75, 122, 123, 124, 125, 126, 127]
+            ],
+            "color": "9E1B2A"
+        },
+        {
+            "id": 12,
+            "type": 1,
+            "code": "R11",
+            "route": [
+                [128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 70, 6, 12, 16, 17, 18, 20, 32, 73, 74, 75]
             ],
             "color": "9E1B2A"
         }
