@@ -13,8 +13,11 @@ information.station?.forEach((station) => {
 information.line.forEach((line) => {
   line?.route?.forEach((route) => {
     route?.forEach((stop, index) => {
-      if (index !== route.length - 1)
+      if (index !== route.length - 1) {
         graph.addDirectedEdge(stop, route[index + 1]);
+        // if (isBidirectional)
+        graph.addDirectedEdge(route[index + 1], stop);
+      }
     });
   });
 });

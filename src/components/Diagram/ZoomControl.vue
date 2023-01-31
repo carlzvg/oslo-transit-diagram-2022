@@ -1,6 +1,8 @@
 <template lang="pug">
 #zoom-control
-  v-btn(fab bottom right small @click="$emit('zoomToExtent')")
+  v-btn(fab bottom right small)
+    v-icon mdi-transit-connection-variant
+  v-btn.mt-2(fab bottom right small @click="$emit('zoomToExtent')")
     v-icon mdi-fullscreen-exit
   v-btn.mt-2(fab bottom right small @click="$emit('zoomIn')")
     v-icon mdi-plus

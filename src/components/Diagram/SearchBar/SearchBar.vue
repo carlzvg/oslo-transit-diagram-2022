@@ -14,10 +14,15 @@
     solo dense hide-hint
     @input="search")
     //- TODO: make update on dropdown menu
+    //- template(v-slot:item="{ item, on, attrs }")
+    //-   v-list-item 
+    //-     v-list-item-content
+    //-       v-list-item-title {{ item.keyword }}
 </template>
 
 <script>
 import information from '@/information.json';
+import graph, { findPath } from './graphSearch';
 
 export default {
   data: () => ({
@@ -38,6 +43,9 @@ export default {
       stn.keyword = `${stn.norwegian}${altName}`;
       return stn;
     });
+
+    console.log(graph);
+    console.log(findPath(62, 1));
   }
 }
 </script>

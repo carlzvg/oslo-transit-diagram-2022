@@ -13,6 +13,10 @@
 		v-icon(small) mdi-currency-usd 
 		| {{ data?.zone?.norwegian }} 
 		span(v-if="data?.zone?.english") ({{ data.zone?.english }})
+	p.mt-2(v-if="data?.station?.extra")
+		| {{ data.station.extra.norwegian }}
+		br
+		| {{ data.station.extra.english }}
 </template>
 
 <script>
