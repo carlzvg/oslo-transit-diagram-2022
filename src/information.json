@@ -741,6 +741,131 @@
             "id": 142,
             "zone": 90,
             "norwegian": "Gjøvik"
+        },
+        {
+            "id": 143,
+            "zone": 1,
+            "norwegian": "Majorstuen"
+        },
+        {
+            "id": 144,
+            "zone": 1,
+            "norwegian": "Bogstadveien"
+        },
+        {
+            "id": 145,
+            "zone": 1,
+            "norwegian": "Rosenborg"
+        },
+        {
+            "id": 146,
+            "zone": 1,
+            "norwegian": "Briskeby"
+        },
+        {
+            "id": 147,
+            "zone": 1,
+            "norwegian": "Riddervolds plass"
+        },
+        {
+            "id": 148,
+            "zone": 1,
+            "norwegian": "Inkognitogata"
+        },
+        {
+            "id": 149,
+            "zone": 1,
+            "norwegian": "Øvre slottsgate"
+        },
+        {
+            "id": 150,
+            "zone": 1,
+            "norwegian": "Dronningens gate"
+        },
+        {
+            "id": 151,
+            "zone": 1,
+            "norwegian": "Storgata"
+        },
+        {
+            "id": 152,
+            "zone": 1,
+            "norwegian": "Nybrua"
+        },
+        {
+            "id": 153,
+            "zone": 1,
+            "norwegian": "Schous plass"
+        },
+        {
+            "id": 154,
+            "zone": 1,
+            "norwegian": "Olaf Ryes plass"
+        },
+        {
+            "id": 155,
+            "zone": 1,
+            "norwegian": "Birkelunden"
+        },
+        {
+            "id": 156,
+            "zone": 1,
+            "norwegian": "Biermanns gate"
+        },
+        {
+            "id": 157,
+            "zone": 1,
+            "norwegian": "Torshov"
+        },
+        {
+            "id": 158,
+            "zone": 1,
+            "norwegian": "Sandaker senter"
+        },
+        {
+            "id": 159,
+            "zone": 1,
+            "norwegian": "Grefsenveien"
+        },
+        {
+            "id": 160,
+            "zone": 1,
+            "norwegian": "Storo"
+        },
+        {
+            "id": 161,
+            "zone": 1,
+            "norwegian": "Disen"
+        },
+        {
+            "id": 162,
+            "zone": 1,
+            "norwegian": "Doktor Smiths vei"
+        },
+        {
+            "id": 163,
+            "zone": 1,
+            "norwegian": "Glads vei"
+        },
+        {
+            "id": 164,
+            "zone": 1,
+            "norwegian": "Grefsenplatået"
+        },
+        {
+            "id": 165,
+            "zone": 1,
+            "norwegian": "Grefsen stadion"
+        },
+        {
+            "id": 166,
+            "zone": 1,
+            "norwegian": "Kjelsåsalleen"
+        },
+        {
+            "id": 167,
+            "zone": 1,
+            "norwegian": "Kjelsås"
         }
     ],
     "type": [
@@ -910,6 +1035,15 @@
                 [20, 32, 73]
             ],
             "color": "2E3147"
+        },
+        {
+            "id": 16,
+            "type": 2,
+            "code": "11",
+            "route": [
+                [143, 144, 145, 146, 147, 148, 18, 149, 150, 20, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167]
+            ],
+            "color": "89BA54"
         }
     ],
     "zone": [
